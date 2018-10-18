@@ -27,4 +27,21 @@ public interface MmallUserMapper {
     int updateByPrimaryKeySelective(MmallUser record);
 
     int updateByPrimaryKey(MmallUser record);
+
+    int checkUsername(@Param("username") String username);
+
+    int checkEmail(String email);
+
+    MmallUser selectLogin(@Param("username") String username,@Param("password") String password);
+
+    String selectQuestionByusername(String username);
+
+    int checkAnswer(@Param("username") String username,@Param("question") String question,@Param("answer") String answer);
+
+    int updatePasswordByusername(@Param("username") String username,@Param("passwordNew") String passwordNew);
+
+    int checkpasswordold(@Param("passwordold") String passwordOld,@Param("userid") int userid);
+
+    int checkExitEmail(@Param("email") String email,@Param("userid") int userid);
+
 }

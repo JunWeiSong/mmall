@@ -153,7 +153,7 @@
       <if test="createTime != null" >
        now(),
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime == null" >
         now(),
       </if>
     </trim>
@@ -185,7 +185,7 @@
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.updateTime != null" >
+      <if test="record.updateTime == null" >
         update_time = now(),
       </if>
     </set>
@@ -224,7 +224,7 @@
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime == null" >
         update_time = now(),
       </if>
     </set>
@@ -240,4 +240,10 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectChildrenByParentId" parameterType="int" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from mmall_category where parent_id=#{parentid}
+  </select>
 </mapper>

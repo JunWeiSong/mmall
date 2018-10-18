@@ -27,4 +27,6 @@ public interface MmallCategoryMapper {
     int updateByPrimaryKeySelective(MmallCategory record);
 
     int updateByPrimaryKey(MmallCategory record);
+
+    List<MmallCategory> selectChildrenByParentId(Integer parentid);
 }

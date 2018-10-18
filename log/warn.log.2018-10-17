@@ -1,0 +1,8 @@
+[WARN] 2018-10-17 21:36:54,318 [org.springframework.web.servlet.PageNotFound] method: org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1176)
+ No mapping found for HTTP request with URI [/manager/login.do] in DispatcherServlet with name 'springmvc'
+[WARN] 2018-10-17 21:38:24,227 [org.springframework.web.servlet.PageNotFound] method: org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1176)
+ No mapping found for HTTP request with URI [/manager/login.do] in DispatcherServlet with name 'springmvc'
+[WARN] 2018-10-17 21:40:21,432 [org.springframework.web.servlet.PageNotFound] method: org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1176)
+ No mapping found for HTTP request with URI [/manager/login.do] in DispatcherServlet with name 'springmvc'
+[WARN] 2018-10-17 21:41:49,332 [org.springframework.web.servlet.PageNotFound] method: org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1176)
+ No mapping found for HTTP request with URI [/manager/login.do] in DispatcherServlet with name 'springmvc'
