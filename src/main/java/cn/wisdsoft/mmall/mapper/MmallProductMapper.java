@@ -27,4 +27,10 @@ public interface MmallProductMapper {
     int updateByPrimaryKeySelective(MmallProduct record);
 
     int updateByPrimaryKey(MmallProduct record);
+
+    List<MmallProduct> selectList();
+
+    List<MmallProduct> selectProductByNameOrId(@Param("ProductName")String ProductName,@Param("ProductId")Integer ProductId);
+
+    List<MmallProduct> selectByNameAndCategoryIds(@Param("ProductName")String productName,@Param("categoryIdList")List<Integer> categoryIdList);
 }

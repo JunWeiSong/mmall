@@ -320,4 +320,35 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from mmall_product order by asc
+  </select>
+  <select id="selectProductByNameOrId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from mmall_product
+    <where>
+      <if test="ProductName != null">
+        and name like CONCAT('%',#{ProductName},'%')
+      </if>
+      <if test="ProductId != null">
+        and category_id like CONCAT('%',#{ProductId},'%')
+      </if>
+    </where>
+  </select>
+  <select id="selectByNameAndCategoryIds" resultMap="BaseResultMap" parameterType="map">
+    select <include refid="Base_Column_List"/>
+    from mmall_product where status=1
+    <if test="ProductName != null">
+      and name like concat('%',#{ProductName},'%')
+    </if>
+    <if test="categoryIdList!=null">
+      and category_id in
+      <foreach collection="categoryIdList" item="item" index="index" open="(" separator="," close=")">
+        #{item}
+      </foreach>
+    </if>
+  </select>
 </mapper>
